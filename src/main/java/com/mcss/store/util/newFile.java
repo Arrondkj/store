@@ -8,4 +8,5 @@ package com.mcss.store.util;
  */
 public class newFile {
     //
+
 }
