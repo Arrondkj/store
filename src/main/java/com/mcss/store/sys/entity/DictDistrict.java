@@ -19,7 +19,7 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("dict_district")
+@TableName("t_dict_district")
 @ApiModel(value="DictDistrict对象", description="")
 public class DictDistrict implements Serializable {
 
