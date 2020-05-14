@@ -7,4 +7,5 @@ package com.mcss.store.util;
  * @Description:
  */
 public class newFile {
+    //
 }
