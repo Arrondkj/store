@@ -2,6 +2,12 @@ package com.mcss.store.customer.mapper;
 
 import com.mcss.store.customer.entity.Product;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * <p>
@@ -11,6 +17,12 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author Arron
  * @since 2020-05-14
  */
+@Repository
 public interface ProductMapper extends BaseMapper<Product> {
-
+    /**
+     * 根据商品的信息模糊查询展示出来
+     * @param title
+     * @return
+     */
+    List<Product> selectLikeProduct(Product product);
 }

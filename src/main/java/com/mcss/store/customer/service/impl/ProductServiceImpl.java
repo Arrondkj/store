@@ -4,7 +4,11 @@ import com.mcss.store.customer.entity.Product;
 import com.mcss.store.customer.mapper.ProductMapper;
 import com.mcss.store.customer.service.IProductService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.apache.ibatis.reflection.ExceptionUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -17,4 +21,24 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> implements IProductService {
 
+    @Autowired
+    private ProductMapper productMapper;
+
+    /**
+     * 查询全部商品信息
+     * @return
+     */
+    @Override
+    public List<Product> findAll() {
+        return list(null);
+    }
+
+    @Override
+    public List<Product> isProductExist(Product product) {
+        List<Product> productList = productMapper.selectLikeProduct(product);
+        if (productList != null && productList.size() > 0) {
+            return productList;
+        }
+        return null;
+    }
 }

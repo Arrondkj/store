@@ -2,4 +2,30 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mcss.store.customer.mapper.UserMapper">
 
+    <resultMap id="UserEntityMap" type="com.mcss.store.customer.entity.User">
+        <id column="id" property="id" />
+        <result column="open_id" property="openId" />
+        <result column="session_key" property="sessionKey" />
+        <result column="nick_name" property="nickName" />
+        <result column="avatar_url" property="avatarUrl" />
+        <result column="gender" property="gender" />
+        <result column="country" property="country" />
+        <result column="gender" property="gender" />
+        <result column="province" property="province" />
+        <result column="city" property="city" />
+        <result column="language" property="language" />
+        <result column="mobile" property="mobile" />
+        <result column="tel_num" property="city" />
+        <result column="created_user" property="createdUser" />
+        <result column="created_time" property="createdTime" />
+        <result column="modified_user" property="modifiedUser" />
+        <result column="modified_time" property="modifiedTime" />
+
+    </resultMap>
+
+    <!-- 查询所有用户数据 -->
+    <!-- List<User> findAll(); -->
+    <select id="findAll" resultMap="UserEntityMap">
+        select * from t_user
+    </select>
 </mapper>

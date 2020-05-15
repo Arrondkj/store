@@ -2,6 +2,7 @@ package com.mcss.store.customer.mapper;
 
 import com.mcss.store.customer.entity.Cart;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author Arron
  * @since 2020-05-14
  */
+@Repository
 public interface CartMapper extends BaseMapper<Cart> {
 
 }

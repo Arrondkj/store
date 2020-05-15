@@ -3,6 +3,7 @@ package com.mcss.store.customer.mapper;
 import com.mcss.store.customer.entity.Address;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Component;
  * @author Arron
  * @since 2020-05-14
  */
-@Component
+@Repository
 public interface AddressMapper extends BaseMapper<Address> {
 
 }

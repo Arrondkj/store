@@ -59,7 +59,7 @@ public class SwaggerCustomerConfig {
 
         Contact contact = new Contact("邓开军", "https://www.csdn.net/", "17623031618@163.com");
         return new ApiInfoBuilder()
-                .title("使用Swagger2 小程序用户基本操作测试") //接口管理文档首页显示
+                .title("小程序用户基本操作测试") //接口管理文档首页显示
                 .description("项目描述：重庆妙传索思网络科技有限公司 购物商城小程序") //API的描述
                 .termsOfServiceUrl("http://www.apache.org/licenses/LICENSE 2.0")// 个人网站url等
                 .version("1.0")
