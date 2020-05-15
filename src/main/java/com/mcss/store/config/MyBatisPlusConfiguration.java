@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @EnableTransactionManagement
 @Configuration
-@MapperScan("com.mcss.store.sys.mapper*")
+@MapperScan("com.mcss.store.customer.mapper*")
 public class MyBatisPlusConfiguration {
     @Bean
     public ISqlInjector sqlInjector() {
