@@ -43,7 +43,7 @@ public class SwaggerCustomerConfig {
                 .enable(true)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.mcss.store.customer.controller"))//扫描该包下面的API注解
-//                .paths(PathSelectors.any())
+                // .paths(PathSelectors.any())
                 .build();
 
     }
