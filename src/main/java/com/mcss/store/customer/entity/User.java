@@ -12,7 +12,7 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 
+ * 用户实体类
  * </p>
  *
  * @author Arron
