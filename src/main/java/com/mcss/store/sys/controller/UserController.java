@@ -1,15 +1,26 @@
 package com.mcss.store.sys.controller;
 
 
+import com.fengwenyi.api_result.helper.ResultHelper;
+import com.fengwenyi.api_result.model.ResultModel;
 import com.mcss.store.sys.entity.User;
+import com.mcss.store.sys.mapper.UserMapper;
+import com.mcss.store.sys.service.IUserService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
+import sun.plugin2.main.server.ResultHandler;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * <p>
- *  前端控制器
+ * 前端控制器
  * </p>
  *
  * @author Arron
@@ -19,22 +30,48 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/sys/user")
 public class UserController {
-    /* 方法注解 */
-    @ApiOperation(value = "查询操作", notes = "用户查询操作")
-    @GetMapping(value="/select")
-    public User select(@ApiParam(value = "姓名" , required=true ) @RequestParam String name) {
-        User u = new User();
-        u.getNickName();
-        u.getLanguage();
-        u.getAvatarUrl();
-        return u;
+
+    @Autowired
+    private IUserService userService;
+
+    @ApiOperation(value = "修改用户", notes = "用户修改操作")
+    @ApiImplicitParams(
+            {
+                    @ApiImplicitParam(
+                            name = "nickName",
+                            value = "用户名",
+                            dataType = "String",
+                            required = true
+                    ),
+                    @ApiImplicitParam(
+                            name = "password",
+                            value = "用户密码",
+                            dataType = "String",
+                            required = true)
+            }
+    )
+    @PutMapping("/updateUser")
+    public String updateUser(String nickName, String password) {
+        return nickName + "," + password;
     }
 
-    /* 方法注解 */
-    @ApiOperation(value = "新增操作", notes = "用户新增操作")
-    @PostMapping(value="/add")
-    public User add(User u) {
-
-        return u;
+    @PostMapping("/addUser")
+    @ApiOperation(value = "添加用户", notes = "用户添加操作")
+    public User addUser(@RequestBody User user) {
+        return user;
     }
+
+    @ApiOperation(value = "查询所有用户", notes = "用户查询操作")
+    @GetMapping("/getUser")
+    public ResultModel getAllUser() {
+        List<User> users = userService.queryUserAll();
+        return ResultHelper.success("Success", users);
+    }
+
+    @ApiOperation(value = "删除用户", notes = "用户删除操作")
+    @DeleteMapping("/deleteUser")
+    public String deleteUser() {
+        return "删除";
+    }
+
 }
