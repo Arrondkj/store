@@ -7,7 +7,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableSwagger2
 @SpringBootApplication
-@MapperScan("com.mcss.store.customer.mapper")
+//@MapperScan(basePackages = "com.mcss.store.customer.mapper")
 public class StoreApplication {
 
     public static void main(String[] args) {

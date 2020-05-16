@@ -42,12 +42,12 @@ public class ProductController {
         return ResultHelper.success("Success", list);
     }
 
-    @GetMapping("/findAll")
-    @ApiOperation(value = "查询全部商品信息", notes = "查询全部商品信息操作")
-    public ResultModel isProductExist(@RequestBody Product product) {
-        //todo
-        return null;
-    }
+//    @GetMapping("/findAll")
+//    @ApiOperation(value = "查询全部商品信息", notes = "查询全部商品信息操作")
+//    public ResultModel isProductExist(@RequestBody Product product) {
+//        //todo
+//        return null;
+//    }
 
     /**
      * todo

@@ -2,6 +2,7 @@ package com.mcss.store.customer.mapper;
 
 import com.mcss.store.customer.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.mapstruct.Mapper;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
@@ -15,7 +16,7 @@ import java.util.List;
  * @author Arron
  * @since 2020-05-14
  */
-@Repository
+@Mapper
 public interface UserMapper extends BaseMapper<User> {
 
     /**
