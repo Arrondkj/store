@@ -20,10 +20,9 @@ public interface IProductService extends IService<Product> {
     List<Product> findAll();
 
     /**
-     * 根据商品标题进行模糊查询
-     * @param product
+     * 查询新品推荐排行榜的前4个商品信息
      * @return
      */
-    List<Product> isProductExist(Product product);
+    List<Product> getNewList();
 
 }

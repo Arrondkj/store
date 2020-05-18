@@ -34,11 +34,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     }
 
     @Override
-    public List<Product> isProductExist(Product product) {
-        List<Product> productList = productMapper.selectLikeProduct(product);
-        if (productList != null && productList.size() > 0) {
-            return productList;
-        }
-        return null;
+    public List<Product> getNewList() {
+        return productMapper.findNewList();
     }
 }

@@ -19,23 +19,18 @@
         <result column="modified_time" property="modifiedTime"/>
     </resultMap>
 
-    <sql id="where_sql">
-        <where>
-            <if test="title != null">
-                title like concat("%","#{title}","%")
-            </if>
-        </where>
-    </sql>
-
-    <!-- 根据商品的信息模糊查询展示出来 -->
-    <!-- List<Product> selectVagueByTitle(String title); -->
-    <select id="selectLikeProduct"
-            resultType="string"
-            resultMap="ProductEntityMap">
-        select
-        title,price,num
-        from t_product
-        <include refid="where_sql"></include>
+    <!-- 查询新品推荐排行榜的前4个商品数据 -->
+    <!-- List<Product> findNewList(); -->
+    <select id="findNewList" resultMap="ProductEntityMap">
+        SELECT
+			*
+		FROM
+			t_product
+		WHERE
+			status=1
+		ORDER BY
+			priority and created_time DESC
+		LIMIT 0, 4
     </select>
 
 

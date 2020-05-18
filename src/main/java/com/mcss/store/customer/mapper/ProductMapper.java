@@ -20,10 +20,12 @@ import java.util.List;
  */
 @Mapper
 public interface ProductMapper extends BaseMapper<Product> {
+
+
     /**
-     * 根据商品的信息模糊查询展示出来
-     *
+     * 查询新品推荐排行榜的前4个商品数据
      * @return
      */
-    List<Product> selectLikeProduct(Product product);
+    List<Product> findNewList();
+
 }
